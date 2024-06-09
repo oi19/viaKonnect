@@ -1,5 +1,5 @@
 import React from "react"
-import { TouchableOpacity, Image, Text } from "react-native"
+import { TouchableOpacity, Image, Text, View } from "react-native"
 import tw from "twrnc"
 import { styles } from "./styles"
 import { NewsProps } from "../../../../domain/news"
@@ -16,13 +16,20 @@ const NewsItem: React.FC<NewsItemProps> = ({ item, navigationHandler }) => {
 
   return (
     <TouchableOpacity onPress={handlePress} style={tw`${styles.container}`}>
-      {item.urlToImage && (
-        <Image source={{ uri: item.urlToImage }} style={tw`${styles.image}`} />
-      )}
-      <Text style={tw`${styles.title}`}>{item.title}</Text>
-      <Text style={tw`${styles.description}`}>
-        {item.description ? item.description : "No description available"}
-      </Text>
+      {item.urlToImage ? (
+        <View style={tw`${styles.imageWrapper}`}>
+          <Image
+            source={{ uri: item.urlToImage }}
+            style={tw`${styles.image}`}
+          />
+        </View>
+      ) : null}
+      <View style={tw`${styles.content}`}>
+        <Text style={tw`${styles.title}`}>{item.title}</Text>
+        <Text style={tw`${styles.description}`}>
+          {item.description ? item.description : "No description available"}
+        </Text>
+      </View>
     </TouchableOpacity>
   )
 }
