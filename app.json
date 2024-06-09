@@ -4,7 +4,7 @@
     "slug": "Noaat",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/appIcon.png",
+    "icon": "./assets/favicon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -24,6 +24,5 @@
     "web": {
       "favicon": "./assets/favicon.png"
     }
-    
   }
 }
