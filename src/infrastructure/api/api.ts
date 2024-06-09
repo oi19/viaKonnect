@@ -1,8 +1,8 @@
 import axios from "axios"
-import { API_KEY } from "@env"
+import { API_KEY, BASE_URL } from "@env"
 
 const axiosInstance = axios.create({
-  baseURL: "https://newsapi.org/v2",
+  baseURL: BASE_URL,
   headers: {
     "Content-Type": "application/json",
     Authorization: `Bearer ${API_KEY}`,
